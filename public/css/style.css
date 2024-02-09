@@ -1,0 +1,19 @@
+a{
+    text-decoration: none; !important;
+    color: black;
+    transition: color 0.3s;
+}
+a:hover{
+    color: #343a40;
+    text-decoration: none !important;
+}
+.link {
+    text-decoration: none !important; /* Altýný çizmeyi kaldýr */
+    color: #ffffff; /* Link rengi */
+    transition: color 0.3s; /* Geçiþ efekti */
+}
+
+/* Linkin üzerine gelindiðinde rengini soluklaþtýr */
+.link:hover {
+    color: #cccccc; /* Soluklaþtýrýlmýþ link rengi */
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Savaþ ve Barýþ",
+    "author": "Lev Tolstoy",
+    "price": 12.99,
+    "image": "https://www.iskultur.com.tr/webp/2016/12/savas-ve-baris-1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Madame Bovary",
+    "author": "Gustave Flaubert",
+    "price": 9.99,
+    "image": "https://img.kitapyurdu.com/v1/getImage/fn:4830071/wh:true/wi:220"
+  },
+  {
+    "id": 3,
+    "name": "Suç ve Ceza",
+    "author": "Fyodor Dostoyevski",
+    "price": 10.99,
+    "image": "https://cdn.dsmcdn.com/ty180/product/media/images/20210923/4/135543021/123892296/1/1_org_zoom.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Büyük Umutlar",
+    "author": "Charles Dickens",
+    "price": 8.99,
+    "image": "https://img.kitapyurdu.com/v1/getImage/fn:3518241/wh:true/wi:220"
+  },
+  {
+    "id": 5,
+    "name": "Anna Karenina",
+    "author": "Lev Tolstoy",
+    "price": 11.99,
+    "image": "https://www.iskultur.com.tr/webp/2011/10/annakarenina.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Moby Dick",
+    "author": "Herman Melville",
+    "price": 14.99,
+    "image": "https://www.canyayinlari.com/productimages/119614/original/9789750741388_806.jpg"
+  }
+]
