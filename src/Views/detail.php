@@ -39,7 +39,11 @@
             </div>
     </div>
 </div>
-
+<footer class="bg-dark text-light text-center py-4 mt-4">
+    <div class="container">
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </div>
+</footer>
 <script src="../../public/js/bootstrap/bootstrap.min.js"></script>
 </body>
 </html>

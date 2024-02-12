@@ -11,7 +11,7 @@ class Route {
                 $controller = new ProductController();
                 $controller->listProducts();
                 break;
-            case '/cart':
+            case '/card':
                 $controller = new CartController();
                 $controller->viewCart();
 
@@ -27,6 +27,11 @@ class Route {
                     http_response_code(404);
                     echo "404 Sayfa Bulunamadý";
                 }
+                break;
+            case '/addToCart':
+                // Ürün eklemeye yönelik iþlemleri gerçekleþtirmek üzere CartController'ý çaðýr
+                $controller = new CartController();
+                $controller->addToCart();
                 break;
             default:
                 http_response_code(404);

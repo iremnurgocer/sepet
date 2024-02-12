@@ -23,7 +23,6 @@
     <div class="row">
         <?php foreach ($products as $product): ?>
                 <div class="col-md-4">
-                    <a href="product_detail?id=<?= $product["id"] ?>" class="blogs-link">
                     <div class="card mb-4 shadow-sm">
                         <div class="card mb-4 shadow-sm" style="justify-content: center; align-items: center;">
                             <img src="<?php echo mb_convert_encoding($product['image'],'ISO-8859-9', 'UTF-8'); ?>" class="card-img-top" style="width: 200px; display: flex;" alt="<?php echo mb_convert_encoding(($product['name']), 'ISO-8859-9', 'UTF-8'); ?>">
@@ -33,22 +32,36 @@
                             <p class="card-text"><?php echo mb_convert_encoding($product['author'],'ISO-8859-9', 'UTF-8'); ?></p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Detay</button>
+                                    <a href="product_detail?id=<?= $product["id"] ?>" class="blogs-link">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Detay</button>
+                                    </a>
                                     <button type="button" class="btn btn-sm btn-outline-secondary" onclick="addToCart(<?php echo $product['id']; ?>)">Sepete Ekle</button>
                                 </div>
                                 <small class="text-muted"><?php echo mb_convert_encoding(($product['price']), 'ISO-8859-9', 'UTF-8'); ?> TL</small>
                             </div>
                         </div>
                     </div>
-                    </a>
+
                 </div>
 
 
         <?php endforeach; ?>
     </div>
 </div>
-
+<footer class="bg-dark text-light text-center py-4 mt-4">
+    <div class="container">
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </div>
+</footer>
 <script src="../../public/js/bootstrap/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    function addToCart(productId) {
+        alert(productId)
+    }
+
+</script>
 </body>
 </html>
 
