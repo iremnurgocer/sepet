@@ -31,16 +31,17 @@
         </tr>
         </thead>
         <tbody>
-        <?php foreach ($items as $item): ?>
+        <?php $items = $Products;?>
+        <?php foreach ($items as $id => $item){ ?>
             <tr>
-                <td><?php echo htmlspecialchars($item['product']['name']); ?></td>
-                <td><?php echo htmlspecialchars($item['quantity']); ?></td>
-                <td><?php echo htmlspecialchars($item['product']['price']); ?> TL</td>
+                <td><?php echo htmlspecialchars(mb_convert_encoding($item['name'], 'ISO-8859-9', 'UTF-8')); ?></td>
+                <td><?php echo htmlspecialchars(1); ?></td>
+                <td><?php echo htmlspecialchars(mb_convert_encoding($item['price'], 'ISO-8859-9', 'UTF-8')); ?> TL</td>
                 <td>
                     <button class="btn btn-sm btn-danger" onclick="removeFromCart(<?php echo $item['product']['id']; ?>)">Kaldýr</button>
                 </td>
             </tr>
-        <?php endforeach; ?>
+        <?php } ?>
         </tbody>
     </table>
 </div>

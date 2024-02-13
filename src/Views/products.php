@@ -54,14 +54,25 @@
     </div>
 </footer>
 <script src="../../public/js/bootstrap/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 <script>
     function addToCart(productId) {
-        alert(productId)
-    }
 
+        // Burada productId ve quantity'yi kullanarak addToCartAjax fonksiyonunu çaðýrýn
+        $.ajax({
+            url: "/addToCart", // Rotanýzý güncellediðinizden emin olun
+            type: "GET",
+            data: {
+                productId: productId
+            },
+            success: function (response) {
+                alert("Sepete eklendi!")
+            }
+        });
+    }
 </script>
+
 </body>
 </html>
 

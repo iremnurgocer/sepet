@@ -10,39 +10,33 @@ class CartController {
 
     public function __construct() {
         $this->CardModel = new Cart();
+        if(empty($_SESSION['cart'])){
+            $_SESSION['cart']=array();
+        }
     }
 
-    public function addToCart($productId, $quantity = 1) {
-        $this->CardModel->addProduct($productId, $quantity);
-        $_SESSION['cart'] = $this->CardModel;
+    public function addToCart($productId) {
+
+        $this->CardModel->addProduct($productId);
+        $_SESSION['cart'][] += $productId;
         // Ekleme iþleminden sonra ana ürün listesine yönlendir
-        header('Location: /?page=products');
+        header('Location: /');
         exit();
     }
 
     public function removeFromCart($productId) {
-        $this->CardModel->removeProduct($productId);
-        $_SESSION['cart'] = $this->CardModel;
+
         // Çýkarma iþleminden sonra sepet sayfasýna yönlendir
-        header('Location: /?page=cart');
+        header('Location: /card');
         exit();
     }
 
-    public function addToCartAjax() {
-        $productId = $_POST['productId'];
-        $quantity = $_POST['quantity'];
-
-        $this->CardModel->addProduct($productId, $quantity);
-        $_SESSION['cart'] = $this->CardModel;
-
-        // JSON formatýnda bir cevap döndür
-        echo json_encode(['success' => true, 'message' => 'Ürün sepete eklendi']);
-    }
 
     public function viewCart() {
-        $items = $this->CardModel->getItems();
+        $Products = $this->CardModel->getCardProducts($_SESSION['cart']);
         require_once __DIR__ . '/../Views/cart.php';
     }
+
 
     // ... Diðer sepet iþlemleri
 }

@@ -14,7 +14,6 @@ class Route {
             case '/card':
                 $controller = new CartController();
                 $controller->viewCart();
-
                 break;
             case '/product_detail':
                 // URL'den id parametresini al
@@ -29,9 +28,15 @@ class Route {
                 }
                 break;
             case '/addToCart':
+                $productId = isset($_GET['productId']) ? $_GET['productId'] : null;
                 // Ürün eklemeye yönelik iþlemleri gerçekleþtirmek üzere CartController'ý çaðýr
-                $controller = new CartController();
-                $controller->addToCart();
+                if ($productId !== null) {
+                    $controller = new CartController();
+                    $controller->addToCart($productId);
+                } else {
+                    http_response_code(400);
+                    echo "Bad Request";
+                }
                 break;
             default:
                 http_response_code(404);
