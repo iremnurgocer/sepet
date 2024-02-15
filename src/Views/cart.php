@@ -2,6 +2,7 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta charset="ISO-8859-9">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sepet</title>
     <link href="../../public/css/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -24,20 +25,22 @@
     <table class="table">
         <thead>
         <tr>
-            <th scope="col">Ürün</th>
+            <th scope="col">ÃœrÃ¼n</th>
             <th scope="col">Adet</th>
             <th scope="col">Fiyat</th>
-            <th scope="col">Ýþlem</th>
+            <th scope="col">iÅŸlem</th>
         </tr>
         </thead>
         <tbody>
+        <?php $totalPrice=0; ?>
         <?php foreach ($Products as $id => $item){ ?>
+                <?php $totalPrice += $item['price']; ?>
             <tr>
                 <td><a href="product_detail?id=<?= $item["id"] ?>"><?php echo $item['name'] ?></a></td>
                 <td><?php echo 1; ?></td>
                 <td><?php echo $item['price']; ?> TL</td>
                 <td>
-                    <button class="btn btn-sm btn-danger" onclick="removeFromCart(<?php echo $item['id']; ?>)">Kaldýr</button>
+                    <button class="btn btn-sm btn-danger" onclick="removeFromCart(<?php echo $item['id']; ?>)">KaldÄ±r</button>
                 </td>
             </tr>
         <?php } ?>
@@ -46,11 +49,14 @@
             <td>
                 <button class="btn btn-sm btn-danger" onclick="clearCart()">Sepeti Temizle</button>
             </td>
+            <td></td>
+            <td><?php echo $totalPrice; ?> TL</td>
+            <td></td>
         </tr>
         <?php } else{ ?>
             <tr>
                 <td>
-                    <a href="/" class="btn btn-lg btn-light">Sepetinize Ürün Ekleyin!</a>
+                    <a href="/" class="btn btn-lg btn-light">Sepetinize Ã¼rÃ¼n Ekleyin!</a>
                 </td>
             </tr>
         <?php } ?>
@@ -68,20 +74,20 @@
 <script>
     function removeFromCart(productId) {
         $.ajax({
-            url: "/removeFromCart", // Rotanýzý güncellediðinizden emin olun
+            url: "/removeFromCart",
             type: "POST",
             data: {
                 productId: productId
             },
             success: function (response) {
-                alert("Çýkarýldý!");
+                alert("Ã‡Ä±karÄ±ldÄ±!");
                 window.location.href = "/card";
             }
         });
     }
     function clearCart(){
         $.ajax({
-            url: "/clearCart", // Rotanýzý güncellediðinizden emin olun
+            url: "/clearCart",
             type: "POST",
 
             success: function (response) {

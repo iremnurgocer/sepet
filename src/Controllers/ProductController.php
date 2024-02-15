@@ -16,26 +16,6 @@ class ProductController {
         require_once __DIR__ . '/../Views/products.php';
     }
 
-    public function showProduct($productId) {
-        $products = $this->productModel->getAllProducts();
-        $product = null;
-        foreach ($products as $p) {
-            if ($p['id'] == $productId) {
-                $product = $p;
-                break;
-            }
-        }
-        if ($product) {
-            require_once __DIR__ . '/../Views/products.php';
-        } else {
-            // Ürün bulunamadýysa hata sayfasýný göster
-            header('HTTP/1.0 404 Not Found');
-            echo "Ürün bulunamadý!";
-            exit();
-        }
-    }
-
-    // ... Diðer ürün iþlemleri
 }
 ?>
 

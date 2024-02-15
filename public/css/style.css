@@ -8,14 +8,14 @@ a:hover{
     text-decoration: none !important;
 }
 .link {
-    text-decoration: none !important; /* Altýný çizmeyi kaldýr */
-    color: #ffffff; /* Link rengi */
-    transition: color 0.3s; /* Geçiþ efekti */
+    text-decoration: none !important;
+    color: #ffffff;
+    transition: color 0.3s;
 }
 
-/* Linkin üzerine gelindiðinde rengini soluklaþtýr */
+
 .link:hover {
-    color: #cccccc; /* Soluklaþtýrýlmýþ link rengi */
+    color: #cccccc;
 }
 
 .image-container {
@@ -28,5 +28,5 @@ a:hover{
 }
 
 .zoomable-img:hover {
-    transform: scale(1.2); /* Büyütme oraný */
+    transform: scale(1.2);
 }

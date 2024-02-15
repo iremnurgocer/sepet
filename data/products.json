@@ -1,44 +1,50 @@
 [
   {
     "id": 1,
-    "name": "Sava� ve Bar��",
+    "name": "Savaş ve Barış",
     "author": "Lev Tolstoy",
-    "price": 12.99,
-    "image": "https://www.iskultur.com.tr/webp/2016/12/savas-ve-baris-1.jpg"
+    "price": 126.99,
+    "image": "https://www.iskultur.com.tr/webp/2016/12/savas-ve-baris-1.jpg",
+    "detail": "Savaş ve Barış, Rus yazar Leo Tolstoy tarafından 1865 ile 1869 yılları arasında yazılan ve 1869 ile 1870 yılları arasında ilk kez yayımlanan bir romandır. Bu epik roman, Napolyon'un Rusya Seferi'ni ve ardından gelen olayları ele alırken, aynı zamanda karakter gelişimi, tarih felsefesi ve insan doğası üzerine derin düşünceler içerir. "
   },
   {
     "id": 2,
     "name": "Madame Bovary",
     "author": "Gustave Flaubert",
-    "price": 9.99,
-    "image": "https://img.kitapyurdu.com/v1/getImage/fn:4830071/wh:true/wi:220"
+    "price": 91.99,
+    "image": "https://img.kitapyurdu.com/v1/getImage/fn:4830071/wh:true/wi:220",
+    "detail": "Madame Bovary, Fransız yazar Gustave Flaubert tarafından 1857 yılında yazılan bir roman. Roman, Charles Bovary ve karısı Emma Bovary'nin hayatını merkezine alır ve aynı zamanda toplumsal eleştiri ve romantizmin eleştirisi üzerine odaklanır."
   },
   {
     "id": 3,
-    "name": "Su� ve Ceza",
+    "name": "Suç ve Ceza",
     "author": "Fyodor Dostoyevski",
-    "price": 10.99,
-    "image": "https://cdn.dsmcdn.com/ty180/product/media/images/20210923/4/135543021/123892296/1/1_org_zoom.jpg"
+    "price": 199.99,
+    "image": "https://cdn.dsmcdn.com/ty180/product/media/images/20210923/4/135543021/123892296/1/1_org_zoom.jpg",
+    "detail": "Suç ve Ceza (Crime and Punishment), Rus yazar Fyodor Dostoyevski tarafından 1866 yılında yazılmış bir romandır. Roman, ahlaki düşünceler, suçun psikolojisi ve adaletin arayışı üzerine odaklanan derinlemesine bir karakter çalışması sunar."
   },
   {
     "id": 4,
-    "name": "B�y�k Umutlar",
+    "name": "Büyük Umutlar",
     "author": "Charles Dickens",
-    "price": 8.99,
-    "image": "https://img.kitapyurdu.com/v1/getImage/fn:3518241/wh:true/wi:220"
+    "price": 96.99,
+    "image": "https://img.kitapyurdu.com/v1/getImage/fn:3518241/wh:true/wi:220",
+    "detail": "Büyük Umutlar (Great Expectations), ünlü İngiliz yazar Charles Dickens tarafından 1860-1861 yılları arasında yazılan bir romandır. Bu eser, Dickens'ın en iyi bilinen ve en sevilen eserlerinden biridir."
   },
   {
     "id": 5,
     "name": "Anna Karenina",
     "author": "Lev Tolstoy",
-    "price": 11.99,
-    "image": "https://www.iskultur.com.tr/webp/2011/10/annakarenina.jpg"
+    "price": 149.99,
+    "image": "https://www.iskultur.com.tr/webp/2011/10/annakarenina.jpg",
+    "detail": "Anna Karenina, Rus yazar Lev Tolstoy tarafından 1873 ile 1877 yılları arasında yazılan bir romandır. Tolstoy'un en önemli eserlerinden biri olarak kabul edilen bu roman, 19. yüzyıl Rus aristokrasisinin yaşamı, aşk, ahlaki değerler ve toplumsal konular üzerine derinlemesine bir inceleme sunar."
   },
   {
     "id": 6,
     "name": "Moby Dick",
     "author": "Herman Melville",
-    "price": 14.99,
-    "image": "https://www.canyayinlari.com/productimages/119614/original/9789750741388_806.jpg"
+    "price": 138.99,
+    "image": "https://www.canyayinlari.com/productimages/119614/original/9789750741388_806.jpg",
+    "detail": "Moby Dick, Amerikalı yazar Herman Melville tarafından 1851 yılında yazılan ve denizcilikle ilgili birçok temayı içeren epik bir roman. Kitap, denizlerin derinliklerine açılan bir av macerasını anlatmanın yanı sıra, insan doğası, obsesyon ve intikam konularını da keşfeder."
   }
 ]

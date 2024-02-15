@@ -8,7 +8,6 @@ class Detail {
 
     private function loadProduct($id) {
         $json = file_get_contents(__DIR__ . '/../../data/products.json');
-        $json=mb_convert_encoding($json, 'UTF-8', 'ISO-8859-9');
 
         $products = json_decode($json, true);
         foreach ($products as $key => $product){

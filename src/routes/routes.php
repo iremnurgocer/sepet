@@ -2,7 +2,6 @@
 require_once  __DIR__ .'/../Controllers/CartController.php';
 require_once  __DIR__ .'/../Controllers/ProductController.php';
 require_once  __DIR__ .'/../Controllers/ProductDetailController.php';
-require_once __DIR__ . '/../helpers/EncodingHelper.php';
 class Route {
 
     public static function run($path) {
@@ -19,18 +18,16 @@ class Route {
             case '/product_detail':
                 // URL'den id parametresini al
                 $id = isset($_GET['id']) ? $_GET['id'] : null;
-                // Eðer id parametresi boþ deðilse, BlogController'ý çaðýr ve id parametresiyle birlikte blog metodu çalýþtýr
                 if ($id !== null) {
                     $controller = new ProductDetailController($id);
                     $controller->detail();
                 } else {
                     http_response_code(404);
-                    echo "404 Sayfa Bulunamadý";
+                    echo "404 Sayfa BulunamadÄ±";
                 }
                 break;
             case '/addToCart':
                 $productId = isset($_GET['productId']) ? $_GET['productId'] : null;
-                // Ürün eklemeye yönelik iþlemleri gerçekleþtirmek üzere CartController'ý çaðýr
                 if ($productId !== null) {
                     $controller = new CartController();
                     $controller->addToCart($productId);
@@ -55,7 +52,7 @@ class Route {
                 break;
             default:
                 http_response_code(404);
-                echo "404 Sayfa Bulunamadý";
+                echo "404 Sayfa BulunamadÄ±";
                 break;
         }
     }

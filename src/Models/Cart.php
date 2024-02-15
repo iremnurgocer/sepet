@@ -18,8 +18,7 @@ class Cart {
 
     public function getCardProducts($id=array()) {
         $json = file_get_contents(__DIR__ . '/../../data/products.json');
-        $json=mb_convert_encoding($json, 'UTF-8', 'ISO-8859-9');
-
+        $Products = array();
         $products = json_decode($json, true);
 
         foreach ($id as $sessionID => $productID){

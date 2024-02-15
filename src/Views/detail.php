@@ -2,15 +2,16 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta charset="ISO-8859-9">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ürünler</title>
+    <title>ÃœrÃ¼nler</title>
     <link href="../../public/css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="../../public/css/style.css" rel="stylesheet">
 </head>
 <body>
 <header class="bg-dark text-light">
     <div class="container">
-        <h1><p class="link"><?php echo mb_convert_encoding(($product['name']), 'ISO-8859-9', 'UTF-8'); ?></p></h1>
+        <h1><p class="link"><?php echo $product['name']; ?></p></h1>
         <nav>
             <ul class="nav">
                 <li class="nav-item"><a class="nav-link link" href="/">ANASAYFA</a></li>
@@ -20,24 +21,30 @@
     </div>
 </header>
 <div class="container mt-5">
-    <div class="row">
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                    <img src="<?php echo mb_convert_encoding($product['image'],'ISO-8859-9', 'UTF-8'); ?>" class="card-img-top" alt="<?php echo mb_convert_encoding(($product['name']), 'ISO-8859-9', 'UTF-8'); ?>">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo mb_convert_encoding(($product['name']), 'ISO-8859-9', 'UTF-8'); ?></h5>
-                        <p class="card-text"><?php echo mb_convert_encoding($product['author'],'ISO-8859-9', 'UTF-8'); ?></p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary" onclick="addToCart(<?php echo $product['id']; ?>)">Sepete Ekle</button>
-                            </div>
-                            <small class="text-muted"><?php echo mb_convert_encoding(($product['price']), 'ISO-8859-9', 'UTF-8'); ?> TL</small>
-                        </div>
+    <div class="row  row-cols-2">
+
+        <div class="col-md-4">
+            <div >
+                <img src="<?php echo $product['image']; ?>" class="card-img-top" alt="<?php echo $product['name']; ?>">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h3><?php echo $product['name']; ?></h3>
+            <p><?php echo $product['author']; ?></p>
+            <h5>Ä°Ã‡ERÄ°K</h5>
+            <p><?php echo $product['detail']; ?></p>
+            <div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-outline-secondary" onclick="addToCart(<?php echo $product['id']; ?>)">Sepete Ekle</button>
                     </div>
+                    <small class="text-muted"><?php echo $product['price']; ?> TL</small>
                 </div>
             </div>
+        </div>
     </div>
 </div>
+
 <footer class="bg-dark text-light text-center py-4 mt-4">
     <div class="container">
         <p>&copy; 2024 My Website. All rights reserved.</p>
@@ -49,9 +56,8 @@
 <script>
     function addToCart(productId) {
 
-        // Burada productId ve quantity'yi kullanarak addToCartAjax fonksiyonunu çaðýrýn
         $.ajax({
-            url: "/addToCart", // Rotanýzý güncellediðinizden emin olun
+            url: "/addToCart",
             type: "GET",
             data: {
                 productId: productId

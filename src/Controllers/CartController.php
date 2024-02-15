@@ -19,7 +19,6 @@ class CartController {
 
         $this->CardModel->addProduct($productId);
         $_SESSION['cart'][] += $productId;
-        // Ekleme iþleminden sonra ana ürün listesine yönlendir
         header('Location: /');
         exit();
     }
@@ -29,15 +28,13 @@ class CartController {
         if ($indeks !== false) {
             unset($_SESSION['cart'][$indeks]);
         }
-        // Çýkarma iþleminden sonra sepet sayfasýna yönlendir
+
         header('Location: /card');
         exit();
     }
 
-
     public function viewCart() {
         $Products = $this->CardModel->getCardProducts($_SESSION['cart']);
-        $Products = mb_convert_encoding($Products, 'ISO-8859-9', 'UTF-8');
         require_once __DIR__ . '/../Views/cart.php';
     }
     public function clearCart() {
@@ -46,6 +43,4 @@ class CartController {
         exit();
     }
 
-
-    // ... Diðer sepet iþlemleri
 }
