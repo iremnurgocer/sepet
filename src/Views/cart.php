@@ -32,28 +32,44 @@
         </tr>
         </thead>
         <tbody>
-        <?php $totalPrice=0; ?>
-        <?php foreach ($Products as $id => $item){ ?>
-                <?php $totalPrice += $item['price']; ?>
+        <?php
+        $totalPrice = 0;
+        $uniqueItems = array();
+
+        foreach ($Products as $id => $item) {
+            if (!isset($uniqueItems[$item['id']])) {
+                $uniqueItems[$item['id']] = $item;
+                $uniqueItems[$item['id']]['quantity'] = 1;
+            } else {
+                $uniqueItems[$item['id']]['quantity']++;
+            }
+
+            $totalPrice += $item['price'];
+        }
+
+        foreach ($uniqueItems as $uniqueItem) {
+            $subtotal = $uniqueItem['price'] * $uniqueItem['quantity'];
+            ?>
             <tr>
-                <td><a href="product_detail?id=<?= $item["id"] ?>"><?php echo $item['name'] ?></a></td>
-                <td><?php echo 1; ?></td>
-                <td><?php echo $item['price']; ?> TL</td>
+                <td><a href="product_detail?id=<?= $uniqueItem["id"] ?>"><?php echo $uniqueItem['name'] ?></a></td>
+                <td><?php echo $uniqueItem['quantity']; ?></td>
+                <td><?php echo $subtotal; ?> TL</td>
                 <td>
-                    <button class="btn btn-sm btn-danger" onclick="removeFromCart(<?php echo $item['id']; ?>)">Kaldır</button>
+                    <button class="btn btn-sm btn-danger" onclick="removeFromCart(<?php echo $uniqueItem['id']; ?>)">Kaldır</button>
                 </td>
             </tr>
         <?php } ?>
-        <?php if(!empty($Products)){ ?>
-        <tr>
-            <td>
-                <button class="btn btn-sm btn-danger" onclick="clearCart()">Sepeti Temizle</button>
-            </td>
-            <td></td>
-            <td><?php echo $totalPrice; ?> TL</td>
-            <td></td>
-        </tr>
-        <?php } else{ ?>
+
+        <?php if (!empty($uniqueItems)) { ?>
+            <tr>
+                <td>TOPLAM</td>
+                <td><?php echo count($Products);?></td>
+                <td><?php echo $totalPrice; ?> TL</td>
+                <td>
+                    <button class="btn btn-sm btn-danger" onclick="clearCart()">Sepeti Temizle</button>
+                </td>
+            </tr>
+        <?php } else { ?>
             <tr>
                 <td>
                     <a href="/" class="btn btn-lg btn-light">Sepetinize ürün Ekleyin!</a>
@@ -62,6 +78,7 @@
         <?php } ?>
         </tbody>
     </table>
+
 </div>
 <footer class="bg-dark text-light text-center py-4 mt-4">
     <div class="container">
