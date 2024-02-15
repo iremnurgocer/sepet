@@ -18,7 +18,7 @@ class Cart {
 
     public function getCardProducts($id=array()) {
         $json = file_get_contents(__DIR__ . '/../../data/products.json');
-        $json=mb_convert_encoding($json, 'ISO-8859-9', 'UTF-8');
+        $json=mb_convert_encoding($json, 'UTF-8', 'ISO-8859-9');
 
         $products = json_decode($json, true);
 
@@ -29,7 +29,6 @@ class Cart {
             foreach ($products as $key => $product){
 
                 if($product["id"]==$productID){
-
                     $Products[] = $product;
                 }
             }

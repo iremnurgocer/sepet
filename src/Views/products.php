@@ -24,8 +24,8 @@
         <?php foreach ($products as $product): ?>
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
-                        <div class="card mb-4 shadow-sm" style="justify-content: center; align-items: center;">
-                            <img src="<?php echo mb_convert_encoding($product['image'],'ISO-8859-9', 'UTF-8'); ?>" class="card-img-top" style="width: 200px; display: flex;" alt="<?php echo mb_convert_encoding(($product['name']), 'ISO-8859-9', 'UTF-8'); ?>">
+                        <div class="card mb-4 shadow-sm image-container" style="justify-content: center; align-items: center;">
+                            <img src="<?php echo mb_convert_encoding($product['image'],'ISO-8859-9', 'UTF-8'); ?>" class="card-img-top zoomable-img" style="width: 200px; display: flex;" alt="<?php echo mb_convert_encoding(($product['name']), 'ISO-8859-9', 'UTF-8'); ?>">
                         </div>
                         <div class="card-body">
                             <h5 class="card-title"><?php echo mb_convert_encoding(($product['name']), 'ISO-8859-9', 'UTF-8'); ?></h5>

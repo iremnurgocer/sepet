@@ -17,3 +17,16 @@ a:hover{
 .link:hover {
     color: #cccccc; /* Soluklaþtýrýlmýþ link rengi */
 }
+
+.image-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.zoomable-img {
+    transition: transform 0.3s ease;
+}
+
+.zoomable-img:hover {
+    transform: scale(1.2); /* Büyütme oraný */
+}

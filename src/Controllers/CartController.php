@@ -25,7 +25,10 @@ class CartController {
     }
 
     public function removeFromCart($productId) {
-
+        $indeks = array_search($productId, $_SESSION['cart']);
+        if ($indeks !== false) {
+            unset($_SESSION['cart'][$indeks]);
+        }
         // Çýkarma iþleminden sonra sepet sayfasýna yönlendir
         header('Location: /card');
         exit();
@@ -34,7 +37,13 @@ class CartController {
 
     public function viewCart() {
         $Products = $this->CardModel->getCardProducts($_SESSION['cart']);
+        $Products = mb_convert_encoding($Products, 'ISO-8859-9', 'UTF-8');
         require_once __DIR__ . '/../Views/cart.php';
+    }
+    public function clearCart() {
+        unset($_SESSION['cart']);
+        header('Location: /card');
+        exit();
     }
 
 

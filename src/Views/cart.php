@@ -31,14 +31,26 @@
         </tr>
         </thead>
         <tbody>
-        <?php $items = $Products;?>
-        <?php foreach ($items as $id => $item){ ?>
+        <?php foreach ($Products as $id => $item){ ?>
             <tr>
-                <td><?php echo htmlspecialchars(mb_convert_encoding($item['name'], 'ISO-8859-9', 'UTF-8')); ?></td>
-                <td><?php echo htmlspecialchars(1); ?></td>
-                <td><?php echo htmlspecialchars(mb_convert_encoding($item['price'], 'ISO-8859-9', 'UTF-8')); ?> TL</td>
+                <td><a href="product_detail?id=<?= $item["id"] ?>"><?php echo $item['name'] ?></a></td>
+                <td><?php echo 1; ?></td>
+                <td><?php echo $item['price']; ?> TL</td>
                 <td>
-                    <button class="btn btn-sm btn-danger" onclick="removeFromCart(<?php echo $item['product']['id']; ?>)">Kaldýr</button>
+                    <button class="btn btn-sm btn-danger" onclick="removeFromCart(<?php echo $item['id']; ?>)">Kaldýr</button>
+                </td>
+            </tr>
+        <?php } ?>
+        <?php if(!empty($Products)){ ?>
+        <tr>
+            <td>
+                <button class="btn btn-sm btn-danger" onclick="clearCart()">Sepeti Temizle</button>
+            </td>
+        </tr>
+        <?php } else{ ?>
+            <tr>
+                <td>
+                    <a href="/" class="btn btn-lg btn-light">Sepetinize Ürün Ekleyin!</a>
                 </td>
             </tr>
         <?php } ?>
@@ -51,5 +63,33 @@
     </div>
 </footer>
 <script src="../../public/js/bootstrap/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+    function removeFromCart(productId) {
+        $.ajax({
+            url: "/removeFromCart", // Rotanýzý güncellediðinizden emin olun
+            type: "POST",
+            data: {
+                productId: productId
+            },
+            success: function (response) {
+                alert("Çýkarýldý!");
+                window.location.href = "/card";
+            }
+        });
+    }
+    function clearCart(){
+        $.ajax({
+            url: "/clearCart", // Rotanýzý güncellediðinizden emin olun
+            type: "POST",
+
+            success: function (response) {
+                alert("Sepet Temizlendi!");
+                window.location.href = "/card";
+            }
+        });
+    }
+</script>
 </body>
 </html>

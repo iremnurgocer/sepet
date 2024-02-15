@@ -2,6 +2,7 @@
 require_once  __DIR__ .'/../Controllers/CartController.php';
 require_once  __DIR__ .'/../Controllers/ProductController.php';
 require_once  __DIR__ .'/../Controllers/ProductDetailController.php';
+require_once __DIR__ . '/../helpers/EncodingHelper.php';
 class Route {
 
     public static function run($path) {
@@ -37,6 +38,20 @@ class Route {
                     http_response_code(400);
                     echo "Bad Request";
                 }
+                break;
+            case '/removeFromCart':
+                $productId = isset($_POST['productId']) ? $_POST['productId'] : null;
+                if ($productId !== null) {
+                    $controller = new CartController();
+                    $controller->removeFromCart($productId);
+                } else {
+                    http_response_code(400);
+                    echo "Bad Request";
+                }
+                break;
+            case '/clearCart':
+                $controller = new CartController();
+                $controller->clearCart();
                 break;
             default:
                 http_response_code(404);

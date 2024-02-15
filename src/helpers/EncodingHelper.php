@@ -1,0 +1,15 @@
+<?php
+class EncodingHelper
+{
+    public static function convertTurkishCharacters($input)
+    {
+        $turkishCharacters = array(
+            'Ã§', 'Ã‡', 'ÄŸ', 'Äž', 'Ä±', 'Ä°', 'Ã¶', 'Ã–', 'ÅŸ', 'Åž', 'Ã¼', 'Ãœ'
+        );
+
+        $correspondingCharacters = array('ç', 'Ç', 'ð', 'Ð', 'ý', 'Ý', 'ö', 'Ö', 'þ', 'Þ', 'ü', 'Ü');
+
+
+        return str_replace($turkishCharacters, $correspondingCharacters, $input);
+    }
+}

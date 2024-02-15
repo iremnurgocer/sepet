@@ -29,7 +29,6 @@
                         <p class="card-text"><?php echo mb_convert_encoding($product['author'],'ISO-8859-9', 'UTF-8'); ?></p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Detay</button>
                                 <button type="button" class="btn btn-sm btn-outline-secondary" onclick="addToCart(<?php echo $product['id']; ?>)">Sepete Ekle</button>
                             </div>
                             <small class="text-muted"><?php echo mb_convert_encoding(($product['price']), 'ISO-8859-9', 'UTF-8'); ?> TL</small>
@@ -45,6 +44,24 @@
     </div>
 </footer>
 <script src="../../public/js/bootstrap/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+    function addToCart(productId) {
+
+        // Burada productId ve quantity'yi kullanarak addToCartAjax fonksiyonunu çaðýrýn
+        $.ajax({
+            url: "/addToCart", // Rotanýzý güncellediðinizden emin olun
+            type: "GET",
+            data: {
+                productId: productId
+            },
+            success: function (response) {
+                alert("Sepete eklendi!")
+            }
+        });
+    }
+</script>
 </body>
 </html>
 
