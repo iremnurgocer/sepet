@@ -15,7 +15,7 @@
         <nav>
             <ul class="nav">
                 <li class="nav-item"><a class="nav-link link" href="/">ANASAYFA</a></li>
-                <li class="nav-item"><a class="nav-link link" href="/card">SEPET</a></li>
+                <li class="nav-item"><a class="nav-link link" href="/cart">SEPET</a></li>
             </ul>
         </nav>
     </div>

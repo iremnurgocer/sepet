@@ -16,7 +16,7 @@ class Cart {
         return $this->products;
     }
 
-    public function getCardProducts($id=array()) {
+    public function getCartProducts($id=array()) {
         $json = file_get_contents(__DIR__ . '/../../data/products.json');
         $Products = array();
         $products = json_decode($json, true);

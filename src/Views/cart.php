@@ -11,11 +11,11 @@
 <body>
 <header class="bg-dark text-light">
     <div class="container">
-        <h1><a href="/" class="link">Sepet</a></h1>
+        <h1 class="link">SEPET</h1>
         <nav>
             <ul class="nav">
                 <li class="nav-item"><a class="nav-link link" href="/">ANASAYFA</a></li>
-                <li class="nav-item"><a class="nav-link link" href="/card">SEPET</a></li>
+                <li class="nav-item"><a class="nav-link link" href="/cart">SEPET</a></li>
             </ul>
         </nav>
     </div>
@@ -98,7 +98,7 @@
             },
             success: function (response) {
                 alert("Çıkarıldı!");
-                window.location.href = "/card";
+                window.location.href = "/cart";
             }
         });
     }
@@ -109,7 +109,7 @@
 
             success: function (response) {
                 alert("Sepet Temizlendi!");
-                window.location.href = "/card";
+                window.location.href = "/cart";
             }
         });
     }

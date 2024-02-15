@@ -11,7 +11,7 @@ class Route {
                 $controller = new ProductController();
                 $controller->listProducts();
                 break;
-            case '/card':
+            case '/cart':
                 $controller = new CartController();
                 $controller->viewCart();
                 break;
