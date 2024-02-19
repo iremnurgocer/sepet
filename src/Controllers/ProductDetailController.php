@@ -11,7 +11,7 @@ class ProductDetailController {
         $this->productModel = new Detail($id);
     }
 
-    public function Detail() {
+    public function detail() {
         $product = $this->productModel->getProduct();
         require_once __DIR__ . '/../Views/detail.php';
     }
